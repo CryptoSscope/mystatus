@@ -6,6 +6,8 @@ import BotaoVoltar from "@/componentes/botaoVoltar";
 import { useAuth } from "@/context/AuthContext";
 // Importa o React
 import React from "react";
+//Importa Barra de Usuário
+import { UserBar } from "@/componentes/UserBar";
 
 type Projeto = {
   id: number;
@@ -81,6 +83,9 @@ export default function ProjetoDetalhePage({ params }: PageProps) {
     : "Você está como anônimo. Faça login para poder votar neste projeto.";
 
   return (
+    <div className="min-h-screen bg-slate-950 text-slate-50">
+      {/*Chama Barra de Usuário*/}
+      <UserBar />
     <main className="min-h-screen bg-slate-950 text-slate-50 px-4 py-10 flex justify-center">
       <div className="w-full max-w-3xl space-y-6">
         {/* Botão para voltar à página anterior */}
@@ -167,5 +172,6 @@ export default function ProjetoDetalhePage({ params }: PageProps) {
         </section>
       </div>
     </main>
+  </div>
   );
 }

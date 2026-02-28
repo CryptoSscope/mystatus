@@ -34,7 +34,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-6">
         {/* Título da página */}
         <h1 className="text-2xl md:text-3xl font-bold text-center">
-          Entrar no MyStatus
+          Login
         </h1>
 
         {/* Texto explicando o contexto da autenticação */}

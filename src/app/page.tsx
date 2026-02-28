@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext"; // importa o hook de autenticação
+import { UserBar } from "@/componentes/UserBar"; // importa barra de usuário para exibir no quem esta logado
+
 
 // Lista de projetos em destaque (mock)
 const projetos = [
@@ -38,7 +40,13 @@ export default function Home() {
   // Quando usuarioAtual é null, consideramos que o usuário é anônimo
   const navegandoComoAnonimo = usuarioAtual === null;
 
+  //Chamando a barra de Usuário logado para exibição
+  <UserBar />
+
   return (
+    <div className="min-h-screen bg-slate-950 text-slate-50">
+      {/* Barra no topo da tela */}
+      <UserBar />
     <main className="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center space-y-6">
         {/* Título principal da aplicação */}
@@ -58,7 +66,7 @@ export default function Home() {
             href="/login"
             className="inline-flex items-center rounded-md bg-sky-600 hover:bg-sky-500 transition-colors px-4 py-2 text-sm font-semibold text-white"
           >
-            Entrar no MyStatus
+            Login
           </Link>
         </div>
 
@@ -159,5 +167,6 @@ export default function Home() {
         </section>
       </div>
     </main>
+  </div>
   );
 }
